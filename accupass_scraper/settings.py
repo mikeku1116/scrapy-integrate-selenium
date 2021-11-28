@@ -7,6 +7,7 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
+from shutil import which
 BOT_NAME = 'accupass_scraper'
 
 SPIDER_MODULES = ['accupass_scraper.spiders']
@@ -88,6 +89,7 @@ DOWNLOADER_MIDDLEWARES = {
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
+
 SELENIUM_DRIVER_NAME = 'chrome'
-SELENIUM_DRIVER_EXECUTABLE_PATH = './chromedriver.exe'
+SELENIUM_DRIVER_EXECUTABLE_PATH = 'chromedriver.exe'
 SELENIUM_DRIVER_ARGUMENTS = ['-headless']

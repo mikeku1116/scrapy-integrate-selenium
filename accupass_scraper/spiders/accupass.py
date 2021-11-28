@@ -1,4 +1,5 @@
 import scrapy
+from scrapy_selenium import SeleniumRequest
 
 
 class AccupassSpider(scrapy.Spider):
@@ -6,5 +7,12 @@ class AccupassSpider(scrapy.Spider):
     allowed_domains = ['accupass.com']
     start_urls = ['http://accupass.com/']
 
+    def start_requests(self):
+        yield SeleniumRequest(url='https://www.accupass.com/?area=north&channel=1', callback=self.parse)
+
     def parse(self, response):
-        pass
+
+        titles = response.css("p.style-f13be39c-event-name::text").getall()
+
+        for title in titles:
+            print(title)
