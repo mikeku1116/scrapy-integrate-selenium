@@ -8,7 +8,7 @@ class AccupassSpider(scrapy.Spider):
     start_urls = ['http://accupass.com/']
 
     def start_requests(self):
-        yield SeleniumRequest(url='https://www.accupass.com/?area=north&channel=1', callback=self.parse)
+        yield SeleniumRequest(url='https://www.accupass.com/?area=north', callback=self.parse)
 
     def parse(self, response):
 
